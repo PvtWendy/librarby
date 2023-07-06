@@ -10,11 +10,19 @@ import { Image } from "@chakra-ui/image";
 import { Box, Flex } from "@chakra-ui/layout";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import * as React from "react";
+
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
   return (
-    <Flex bg="goldenrod" w="full" justify="space-between" align="center">
+    <Flex
+      pos="sticky"
+      top={0}
+      bg="goldenrod"
+      w="full"
+      justify="space-between"
+      align="center"
+    >
       <Button
         objectFit="cover"
         variant="link"
@@ -35,16 +43,18 @@ export default function Header() {
         </Button>
       </Box>
 
-      <Button ref={btnRef} onClick={onOpen} aspectRatio={1} mr="4vw" display={{base:"flex", md:"none"}}>
+      <Button
+        ref={btnRef}
+        onClick={onOpen}
+        aspectRatio={1}
+        mr="4vw"
+        display={{ base: "flex", md: "none" }}
+      >
         <HamburgerIcon boxSize={6} />
       </Button>
-      <Drawer
-        isOpen={isOpen}
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
+      <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay>
-          <DrawerCloseButton height={10} width={10}/>
+          <DrawerCloseButton height={10} width={10} />
           <DrawerBody bg="goldenrod">
             <Box display="flex" flexDirection="column" my="16vw">
               <Button color="black" fontSize="xl" variant="link" py="8">

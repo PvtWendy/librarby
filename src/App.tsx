@@ -1,6 +1,5 @@
 
-import * as React from "react"
-import Header from "./components/common/Header"
+import HomeFirstSection from "./components/common/HomeFirstSection"
 import {
   ChakraProvider,
   theme,
@@ -8,6 +7,6 @@ import {
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Header/>
+    <HomeFirstSection/>
   </ChakraProvider>
 )
