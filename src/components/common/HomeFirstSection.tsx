@@ -1,4 +1,12 @@
-import { Box, Flex, Input, InputGroup, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+  background,
+} from "@chakra-ui/react";
 import Header from "./Header";
 import { Search2Icon } from "@chakra-ui/icons";
 export default function HomeFirstSection() {
@@ -15,13 +23,19 @@ export default function HomeFirstSection() {
       >
         <Text fontSize={{ base: "6xl", sm: "8xl" }}>LIBRARBY</Text>
         <Text fontSize="4xl">Where all the best books reside</Text>
-        <Input
-        mt="5vw"
-        variant="filled"
-          w="40vw"
-          textAlign="center"
-          placeholder="Search for your favorite book"
-        ></Input>
+        <InputGroup color="blackAlpha.600" mt="5vw" w={{ base: "80vw", md: "40vw" }}>
+          <InputLeftElement>
+            <Search2Icon></Search2Icon>
+          </InputLeftElement>
+          <Input
+            _focus={{
+              bgColor: "gray.100",
+            }}
+            textAlign="center"
+            variant="filled"
+            placeholder="Search for your favorite book"
+          ></Input>
+        </InputGroup>
       </Flex>
     </Box>
   );

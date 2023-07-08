@@ -42,19 +42,22 @@ export default function Header() {
           About
         </Button>
       </Box>
-
       <Button
         ref={btnRef}
         onClick={onOpen}
         aspectRatio={1}
+        bg={"goldenrod"}
+        border={"1px solid black"}
         mr="4vw"
+        
         display={{ base: "flex", md: "none" }}
       >
         <HamburgerIcon boxSize={6} />
       </Button>
+
       <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay>
-          <DrawerCloseButton height={10} width={10} />
+          <DrawerCloseButton pos="absolute" top={"4.44vw"} right={"4vw"} height={10} width={10} border={"1px solid black"}/>
           <DrawerBody bg="goldenrod">
             <Box display="flex" flexDirection="column" my="16vw">
               <Button color="black" fontSize="xl" variant="link" py="8">
