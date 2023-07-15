@@ -5,7 +5,6 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
-  background,
 } from "@chakra-ui/react";
 import Header from "./Header";
 import { Search2Icon } from "@chakra-ui/icons";
